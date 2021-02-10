@@ -1,0 +1,23 @@
+﻿@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddRoom</title>
+</head>
+<body>
+    @using (Html.BeginForm("add", "producer", FormMethod.Post))
+    {
+        <label>Имя и фамилия режисера : </label>
+        <input type="text" id="request" name="request" /><br />
+
+        <input type="submit" value="Добавить режисера">
+    }
+    <a href="/producer/showProducer">Вернуться</a>
+</body>
+</html>

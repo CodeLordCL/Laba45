@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Laba45Tsi.Storage.Entity.producerEntity>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Режисёры</title>
+</head>
+<body>
+    <div>
+        <h1>Режисёры</h1>
+        @foreach (var item in Model)
+        {
+            <label>Фамилия и имя режисера : </label>@item.name<br />
+            <a href="/producer/updateProducer/@item.id">Редактировать режисёра</a>
+            <a href="/film/showFilmByProducer/@item.id">Показать фильмы</a>
+            <a href="/producer/dell/@item.id">Удалить</a>
+            <br />
+        }
+        @using (Html.BeginForm("addProducer", "producer"))
+        {
+            <div><input type="submit" value="Добавить режисера"></div>
+        }
+        <a href="/genre/showGenre">Список жанров</a>
+    </div>
+</body>
+</html>

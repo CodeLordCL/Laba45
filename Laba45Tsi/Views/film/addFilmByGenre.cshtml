@@ -1,0 +1,29 @@
+﻿@model Laba45Tsi.Managers.filmManager.filmCreatOrUpdateRequest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddClient</title>
+</head>
+<body>
+    @using (Html.BeginForm("addByGenre", "film", FormMethod.Post))
+    {
+        <label>Жанр : @ViewBag.genre.genreName</label>
+        <input type="hidden" value="@ViewBag.genre.id" name="genreId">
+        <input type="hidden" value="@ViewBag.genre.genreName" name="genreName"><br /><br />
+
+        <label>Название фильма : </label>
+        <input type="text" id="filmName" name="filmName" /><br /><br />
+        <label>Фамилия и имя режисера : </label>
+        <input type="text" id="producerName" name="producerName">
+
+        <input type="submit" value="Содать">
+    }
+    <a href="/film/showFilmByGenre/@ViewBag.genre.id">Вернуться</a>
+</body>
+</html>

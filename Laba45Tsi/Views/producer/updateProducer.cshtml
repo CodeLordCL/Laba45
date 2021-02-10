@@ -1,0 +1,25 @@
+﻿@model Laba45Tsi.Storage.Entity.producerEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Обновить информацию о режисере</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("update", "producer", FormMethod.Post))
+        {
+            <label>Фамилия и имя режисера : </label>
+            <input type="text" id="request" name="request" value="@Model.name" /><br /><br />
+            <input type="hidden" id="id" name="id" value="@Model.id" />
+            <input type="submit" value="Обновить информацию о режисере">
+        }
+    <a href="/producer/showProducer">Вернуться</a>
+    </div>
+</body>
+</html>

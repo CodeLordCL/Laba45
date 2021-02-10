@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Laba45Tsi.Storage.Entity.genreEntity>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Жанры</title>
+</head>
+<body>
+    <div>
+        <h1>Жанры</h1>
+        @foreach (var item in Model)
+        {
+            <label>Название жанра : </label>@item.genreName<br />
+            <a href="/genre/updateGenre/@item.id">Редактировать жанр</a>
+            <a href="/film/showFilmByGenre/@item.id">Показать фильмы</a>
+            <a href="/genre/dell/@item.id">Удалить</a>
+            <br />
+        }
+        @using (Html.BeginForm("addGenre", "genre"))
+        {
+            <div><input type="submit" value="Добавить жанр"></div>
+        }
+        <a href="/producer/showProducer">Список режисеров</a>
+    </div>
+</body>
+</html>

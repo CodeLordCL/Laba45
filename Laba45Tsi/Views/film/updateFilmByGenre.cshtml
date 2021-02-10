@@ -1,0 +1,32 @@
+﻿@model Laba45Tsi.Storage.Entity.filmEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddClient</title>
+</head>
+<body>
+    @using (Html.BeginForm("updateByGenre", "film", FormMethod.Post))
+    {
+        <label>Жанр : @Model.genreName</label>
+        <input type="hidden" value="@Model.genreId" name="genreId">
+        <input type="hidden" value="@Model.genreName" name="genreName">
+
+        <label>Название фильма : </label>
+        <input type="text" id="filmName" name="filmName" value="@Model.filmName" /><br /><br />
+
+
+        <label>Фамилия и имя режисера : </label>
+        <input type="text" id="producerName" name="producerName" value="@Model.producerName"><br />
+        <input type="submit" value="Обновить">
+        <input type="hidden" name="id" id="id" value="@Model.id">
+
+    }
+<a href="/film/showFilmByGenre/@Model.genreId">Вернуться</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Laba45Tsi.Storage.Entity.filmEntity>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowClient</title>
+</head>
+<body>
+    <div>
+        <h2>Фильмы режисера @ViewBag.producer.name</h2>
+        @foreach (var item in Model)
+        {
+            <label>Название фильма : </label>@item.filmName<br />
+            <label>Жанр : </label>@item.genreName<br />
+            <a href="/film/updateFilmByProducer/@item.id">Изменить информацию о фильме</a>
+            <a href="/film/dellByProducer/@item.id">Удалить</a>
+            <br />
+        }
+        <a href="/film/addFilmByProducer/@ViewBag.id">Добвить фильм</a><br />
+        <a href="/producer/showProducer">Список режисёров</a><br />
+
+    </div>
+</body>
+</html>

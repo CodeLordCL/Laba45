@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Laba45Tsi.Storage.Entity.filmEntity>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowClient</title>
+</head>
+<body>
+    <div>
+        <h2>Фильмы жанра @ViewBag.ganre</h2>
+        @foreach (var item in Model)
+        {
+            <label>Название фильма : </label>@item.filmName<br />
+            <label>Продюсер : </label>@item.producerName<br />
+            <a href="/film/updateFilmByGenre/@item.id">Изменить информацию о фильме</a>
+            <a href="/film/dellByGenre/@item.id">Удалить</a>
+            <br />
+        }
+        <a href="/film/addFilmByGenre/@ViewBag.id">Добвить фильм</a><br />
+        <a href="https://localhost:44303/">Список жанров</a><br />
+
+    </div>
+</body>
+</html>

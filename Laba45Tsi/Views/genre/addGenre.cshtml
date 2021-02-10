@@ -1,0 +1,23 @@
+﻿@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddRoom</title>
+</head>
+<body>
+    @using (Html.BeginForm("add", "genre", FormMethod.Post))
+    {
+        <label>Название жанра : </label>
+        <input type="text" id="request" name="request" /><br />
+
+        <input type="submit" value="Добавить жанр">
+    }
+<a href="/genre/showGenre">Вернуться</a>
+</body>
+</html>

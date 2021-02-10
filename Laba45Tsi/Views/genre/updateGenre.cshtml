@@ -1,0 +1,25 @@
+﻿@model Laba45Tsi.Storage.Entity.genreEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateRoom</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("update", "genre", FormMethod.Post))
+        {
+            <label>Названеи жанра : </label>
+            <input type="text" id="request" name="request" value="@Model.genreName" /><br /><br />
+            <input type="hidden" id="id" name="id" value="@Model.id">
+            <input type="submit" value="Обновить информацию о номере">
+        }
+    <a href="/genre/showGenre">Вернуться</a>
+    </div>
+</body>
+</html>
